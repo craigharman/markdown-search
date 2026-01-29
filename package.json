@@ -33,7 +33,7 @@
         {
           "name": "query",
           "type": "text",
-          "placeholder": "ags: search term",
+          "placeholder": "abc: search term",
           "required": false
         }
       ]

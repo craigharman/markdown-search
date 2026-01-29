@@ -33,7 +33,7 @@ declare namespace Arguments {
   export type CreateDocument = {}
   /** Arguments passed to the `quick-search` command */
   export type QuickSearch = {
-  /** ags: search term */
+  /** abc: search term */
   "query": string
 }
 }
