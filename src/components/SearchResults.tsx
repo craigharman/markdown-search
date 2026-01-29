@@ -1,7 +1,7 @@
 import { List, ActionPanel, Action, Icon, getPreferenceValues } from "@raycast/api";
 import { useState, useMemo } from "react";
 import type { Preferences, SearchResult } from "../types";
-import { searchInContent, highlightMatch } from "../lib/search";
+import { searchInContent } from "../lib/search";
 import { useDocument } from "../hooks/useDocuments";
 import { getDocumentFilePath } from "../lib/storage";
 import { DocumentDetail } from "./DocumentDetail";

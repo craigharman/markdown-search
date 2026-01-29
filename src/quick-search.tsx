@@ -2,11 +2,10 @@ import { List, ActionPanel, Action, Icon, LaunchProps } from "@raycast/api";
 import { useState, useMemo, useEffect } from "react";
 import { useDocuments, useDocumentByShortcut } from "./hooks/useDocuments";
 import { parseShortcutQuery } from "./lib/shortcuts";
-import { searchInContent, highlightMatch } from "./lib/search";
+import { searchInContent } from "./lib/search";
 import { readDocumentContent, getDocumentFilePath } from "./lib/storage";
 import { DocumentDetail } from "./components/DocumentDetail";
 import { SearchResults } from "./components/SearchResults";
-import type { Document, SearchResult } from "./types";
 
 interface Arguments {
   query?: string;

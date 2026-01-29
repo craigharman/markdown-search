@@ -6,10 +6,9 @@ import {
   useNavigation,
   getPreferenceValues,
 } from "@raycast/api";
-import { useState, useMemo } from "react";
-import type { Document, Preferences } from "../types";
+import { useMemo } from "react";
+import type { Preferences } from "../types";
 import { useDocument } from "../hooks/useDocuments";
-import { useSearch } from "../hooks/useSearch";
 import { getDocumentFilePath } from "../lib/storage";
 import { SearchResults } from "./SearchResults";
 import { DocumentForm } from "./DocumentForm";

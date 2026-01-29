@@ -163,8 +163,6 @@ export async function updateDocument(
 
     // Rename file if it exists
     try {
-      const oldPath = getDocumentFilePath(oldFilename);
-      const newPath = getDocumentFilePath(finalFilename);
       const existingContent = await readDocumentContent(oldFilename);
       await writeDocumentContent(finalFilename, content ?? existingContent);
       await deleteDocumentFile(oldFilename);
