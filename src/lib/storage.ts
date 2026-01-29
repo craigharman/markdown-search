@@ -1,8 +1,8 @@
-import { getPreferenceValues } from "@raycast/api";
+import { getPreferenceValues, trash } from "@raycast/api";
 import * as fs from "fs/promises";
 import * as path from "path";
 import * as os from "os";
-import type { Document, DocumentIndex, Preferences } from "../types";
+import type { Document, DocumentIndex } from "../types";
 
 const INDEX_FILENAME = "index.json";
 const CURRENT_VERSION = 1;
@@ -15,7 +15,7 @@ function getDefaultStoragePath(): string {
 }
 
 export function getStoragePath(): string {
-  const prefs = getPreferenceValues<Preferences>();
+  const prefs = getPreferenceValues<{ syncFolder?: string; defaultEditor?: string }>();
   return prefs.syncFolder || getDefaultStoragePath();
 }
 
@@ -75,7 +75,7 @@ export async function deleteDocumentFile(filename: string): Promise<void> {
   const filePath = path.join(storagePath, filename);
 
   try {
-    await fs.unlink(filePath);
+    await trash(filePath);
   } catch {
     // File may not exist
   }

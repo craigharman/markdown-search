@@ -88,10 +88,11 @@ function DocumentListItem({ document, onDelete }: DocumentListItemProps) {
       title={document.title}
       subtitle={document.tags.join(", ")}
       keywords={[...document.tags, document.shortcut || ""].filter(Boolean)}
-      accessories={[
-        document.shortcut ? { tag: `${document.shortcut}:` } : {},
-        { date: new Date(document.updatedAt) },
-      ].filter((a) => Object.keys(a).length > 0)}
+      accessories={
+        document.shortcut
+          ? [{ tag: `${document.shortcut}:` }, { date: new Date(document.updatedAt) }]
+          : [{ date: new Date(document.updatedAt) }]
+      }
       actions={
         <ActionPanel>
           <ActionPanel.Section title="View">

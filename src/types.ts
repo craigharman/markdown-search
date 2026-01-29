@@ -20,11 +20,6 @@ export interface SearchResult {
   matchEnd: number;
 }
 
-export interface Preferences {
-  syncFolder?: string;
-  defaultEditor?: string;
-}
-
 export interface ParsedShortcut {
   prefix: string;
   searchTerm: string;

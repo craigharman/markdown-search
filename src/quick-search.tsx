@@ -233,9 +233,7 @@ function DocumentList({ searchText, onSearchChange }: DocumentListProps) {
               key={doc.id}
               title={doc.title}
               subtitle={doc.tags.join(", ")}
-              accessories={[
-                doc.shortcut ? { tag: `${doc.shortcut}:` } : {},
-              ].filter((a) => Object.keys(a).length > 0)}
+              accessories={doc.shortcut ? [{ tag: `${doc.shortcut}:` }] : []}
               actions={
                 <ActionPanel>
                   <Action.Push

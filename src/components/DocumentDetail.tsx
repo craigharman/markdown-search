@@ -7,7 +7,6 @@ import {
   getPreferenceValues,
 } from "@raycast/api";
 import { useMemo } from "react";
-import type { Preferences } from "../types";
 import { useDocument } from "../hooks/useDocuments";
 import { getDocumentFilePath } from "../lib/storage";
 import { SearchResults } from "./SearchResults";
@@ -22,7 +21,7 @@ interface Props {
 export function DocumentDetail({ documentId, highlightLine, highlightTerm }: Props) {
   const { push } = useNavigation();
   const { document, content, isLoading } = useDocument(documentId);
-  const prefs = getPreferenceValues<Preferences>();
+  const prefs = getPreferenceValues<{ syncFolder?: string; defaultEditor?: string }>();
 
   const filePath = document ? getDocumentFilePath(document.filename) : "";
 

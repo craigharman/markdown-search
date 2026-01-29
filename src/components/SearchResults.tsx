@@ -1,6 +1,6 @@
 import { List, ActionPanel, Action, Icon, getPreferenceValues } from "@raycast/api";
 import { useState, useMemo } from "react";
-import type { Preferences, SearchResult } from "../types";
+import type { SearchResult } from "../types";
 import { searchInContent } from "../lib/search";
 import { useDocument } from "../hooks/useDocuments";
 import { getDocumentFilePath } from "../lib/storage";
@@ -19,7 +19,7 @@ export function SearchResults({
 }: Props) {
   const [searchText, setSearchText] = useState(initialQuery);
   const { document } = useDocument(documentId);
-  const prefs = getPreferenceValues<Preferences>();
+  const prefs = getPreferenceValues<{ syncFolder?: string; defaultEditor?: string }>();
 
   const results = useMemo(() => {
     if (!searchText.trim()) return [];
